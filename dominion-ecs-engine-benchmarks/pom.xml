@@ -6,7 +6,7 @@
     <parent>
         <artifactId>dominion-ecs</artifactId>
         <groupId>jw.dev.dominion.ecs</groupId>
-        <version>${revision}</version>
+        <version>0.0.2-Release</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -24,7 +24,7 @@
         <dependency>
             <groupId>jw.dev.dominion.ecs</groupId>
             <artifactId>dominion-ecs-engine</artifactId>
-            <version>${revision}</version>
+            <version>${project.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
