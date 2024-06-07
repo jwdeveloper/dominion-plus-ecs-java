@@ -6,9 +6,6 @@
 package dev.dominion.ecs.examples.hello;
 
 import dev.dominion.ecs.api.Dominion;
-import dev.dominion.ecs.api.Scheduler;
-import dev.dominion.ecs.examples.components.*;
-
 
 public class HelloDominion {
 
