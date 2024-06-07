@@ -38,7 +38,7 @@ jobs:
       run: mvn versions:set -DnewVersion=${{steps.version.outputs.version_tag}} 
            
     - name: 3 Build with Maven
-      run: mvn package -P publish --file pom.xml  
+      run: mvn package --file pom.xml  
     - name: 3.1 Show files
       run: find . -type f -ls
       
