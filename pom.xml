@@ -7,7 +7,7 @@
     <groupId>jw.dev.dominion.ecs</groupId>
     <artifactId>dominion-ecs</artifactId>
     <packaging>pom</packaging>
-    <version>${revision}</version>
+    <version>0.0.1-Release</version>
 
     <name>Dominion ECS Project</name>
     <description>Dominion is an Entity Component System library for Java</description>
