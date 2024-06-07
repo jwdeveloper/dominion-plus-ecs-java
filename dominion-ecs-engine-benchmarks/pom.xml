@@ -5,7 +5,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>dominion-ecs</artifactId>
-        <groupId>dev.dominion.ecs</groupId>
+        <groupId>jw.dev.dominion.ecs</groupId>
         <version>${revision}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -22,7 +22,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>dev.dominion.ecs</groupId>
+            <groupId>jw.dev.dominion.ecs</groupId>
             <artifactId>dominion-ecs-engine</artifactId>
             <version>${revision}</version>
             <scope>compile</scope>

@@ -1,3 +1,9 @@
+/*
+ * /*
+ *  * Copyright (c) 2021 Enrico Stara
+ *  * This code is licensed under the MIT license. See the LICENSE file in the project root for license terms.
+ *  */
+
 package dev.dominion.ecs.examples.test;
 
 import dev.dominion.ecs.api.Dominion;
@@ -6,6 +12,7 @@ public class Main {
     public static void main(String[] args) {
 
         Dominion api = Dominion.create();
+
         var totalInterfaces =0;
         for (var i = 0; i < 1000000; i++) {
             TestInterface testComponent = new TestComponent();
