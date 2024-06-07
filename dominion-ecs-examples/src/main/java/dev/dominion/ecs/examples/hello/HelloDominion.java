@@ -7,6 +7,8 @@ package dev.dominion.ecs.examples.hello;
 
 import dev.dominion.ecs.api.Dominion;
 import dev.dominion.ecs.api.Scheduler;
+import dev.dominion.ecs.examples.components.*;
+
 
 public class HelloDominion {
 
@@ -15,11 +17,6 @@ public class HelloDominion {
         Dominion hello = Dominion.create();
 
         // create an entity with components
-        hello.createEntity(
-                "my-entity",
-                new Position(0, 0),
-                new Velocity(1, 1)
-        );
 
         // create a system
         Runnable system = () -> {
@@ -36,18 +33,9 @@ public class HelloDominion {
                     });
         };
 
-        // create a scheduler
-        Scheduler scheduler = hello.createScheduler();
-        // schedule the system
-        scheduler.schedule(system);
-        // start 3 ticks per second
-        scheduler.tickAtFixedRate(3);
 
-        // wait 10 seconds
-        Thread.sleep(10000);
-        // close the dominion
-        hello.close();
-        System.out.println("the end");
+
+
     }
 
     // component types can be both classes and records

@@ -149,8 +149,15 @@ public final class ClassIndex implements AutoCloseable {
         int min = Integer.MAX_VALUE, max = 0;
         for (int i = 0; i < length; i++) {
             int value = getIndexOrAddClass(objects[i].getClass());
-            if (checkArray[value]) {
-                throw new IllegalArgumentException("Duplicate object types are not allowed");
+            if (checkArray[value])
+            {
+                if(objects[i].getClass().getInterfaces().length >0)
+                {
+                    value++;
+                }
+                else {
+                    throw new IllegalArgumentException("Duplicate object types are not allowed");
+                }
             }
             checkArray[value] = true;
             min = Math.min(value, min);

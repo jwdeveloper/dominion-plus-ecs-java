@@ -138,11 +138,13 @@ public final class CompositionRepository implements AutoCloseable {
     }
 
     private Class<?>[] getComponentTypes(Object[] components) {
-        Class<?>[] componentTypes = new Class<?>[components.length];
+        var componentTypes = new HashSet<>();
         for (int i = 0; i < components.length; i++) {
-            componentTypes[i] = components[i].getClass();
+            var interfac = components[i].getClass().getInterfaces();
+            componentTypes.addAll(Arrays.stream(interfac).toList());
+            componentTypes.add(components[i].getClass());
         }
-        return componentTypes;
+        return componentTypes.toArray(new Class[0]);
     }
 
     private DataComposition getNodeComposition(Node link) {

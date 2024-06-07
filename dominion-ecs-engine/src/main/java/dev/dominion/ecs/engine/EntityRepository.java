@@ -12,10 +12,7 @@ import dev.dominion.ecs.engine.system.Config;
 import dev.dominion.ecs.engine.system.IndexKey;
 import dev.dominion.ecs.engine.system.Logging;
 
-import java.util.Arrays;
-import java.util.Locale;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Stream;
@@ -46,6 +43,19 @@ public final class EntityRepository implements Dominion {
     public Entity createEntity(Object... components) {
         checkState();
         Object[] componentArray = components.length == 0 ? null : components;
+        if(componentArray != null)
+        {
+            List<Object> newArray = new ArrayList<>();
+            for (var component : componentArray) {
+                newArray.add(component);
+                var _interfaces = component.getClass().getInterfaces();
+                for (var ___ : _interfaces) {
+                    newArray.add(component);
+                }
+            }
+            componentArray = newArray.toArray();
+        }
+
         DataComposition composition = compositions.getOrCreate(componentArray);
         IntEntity entity = composition.createEntity(false, componentArray);
         if (Logging.isLoggable(loggingContext.levelIndex(), System.Logger.Level.DEBUG)) {
