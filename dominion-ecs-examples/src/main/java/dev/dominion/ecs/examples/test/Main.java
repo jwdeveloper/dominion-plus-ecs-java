@@ -16,12 +16,12 @@ public class Main {
         var totalInterfaces =0;
         for (var i = 0; i < 1000000; i++) {
             TestInterface testComponent = new TestComponent();
-            api.createEntity(testComponent);
+            api.createEntity(testComponent, new MoveComponent());
             totalInterfaces++;
         }
         for (var i = 0; i < 1000000; i++) {
             TestInterface testComponent2 = new TestComponent2();
-            api.createEntity(testComponent2);
+            api.createEntity(testComponent2, new MoveComponent());
             totalInterfaces++;
         }
         for (var i = 0; i < 1000000; i++) {
